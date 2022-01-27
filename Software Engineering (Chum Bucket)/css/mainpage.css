@@ -1,0 +1,430 @@
+*
+{
+    font-family: Verdana;
+}
+
+
+body
+{
+    overflow-x: hidden; /* needed because hiding the menu on the right side is not perfect,  */
+}
+
+a
+{
+    text-decoration: none;
+    color: #232323;
+
+    transition: color 0.3s ease;
+}
+
+a:hover
+{
+    color: tomato;
+}
+
+#menuToggle
+{
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle input
+{
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #232323;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+    transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+    opacity: 1;
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 0;
+    padding: 50px;
+    padding-top: 125px;
+    right: -100px;
+
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul
+{
+    transform: none;
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    #menu {
+        transform: none;
+        opacity: 0;
+
+        transition: opacity 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+}
+
+.maincontainer {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+}
+
+.deadzone {
+    border: 2px solid black;
+    background-color: red;
+}
+
+.deadzone * {
+    opacity: 80%;
+}
+
+.lightzone {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 30px;
+    background-color: lightgreen;
+}
+
+.speech-bubble {
+    background-color: #f8f8f8;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+}
+
+
+.board {
+    height: 250px;
+    direction: rtl;
+    overflow-y: scroll;
+    background-color: lightgrey;
+
+    margin: 25px;
+}
+
+.modules-board {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    direction: ltr;
+
+    margin: 25px;
+    background-color: lightgrey;
+}
+
+.module {
+    border: 1px solid;
+    margin: 20px;
+    padding-right: 10px;
+    cursor: move;
+}
+
+.modulname {
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #40beaa;
+    margin-right: -10px;
+}
+
+.veranstaltung {
+    border: 1px solid black;
+    padding: 10px;
+    height: 20px;
+    background-color: white;
+}
+
+.veranstaltungen {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+#studienverlaufsplan {
+    height: 600px;
+}
+
+.semester-board {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
+    direction: ltr;
+
+    margin: 25px;
+    background-color: lightgrey;
+}
+
+.semester {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2px;
+}
+
+.semester-information {
+    background-color: white;
+    border: 1px solid black;
+    padding-left: 20px;
+
+}
+
+.semester-modules {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2px;
+}
+
+.semester-modul {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-gap: 1px;
+}
+
+.sm-veranstaltungen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    margin: 0;
+    background-color: white;
+}
+
+.s-options {
+    position: relative;
+    bottom: 100px;
+    margin-right: 10px;
+}
+
+
+i {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+button {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid black;
+}
+
+button:hover {
+    background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+
+    color: white;
+}
+
+button:active {
+    background: white;
+    color: black;
+}
+
+#seitenoption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+
+    /*
+    padding: 0;
+    border: none;
+    */
+}
+
+#semester-button-add {
+    border-radius: 25px;
+}
+
+.semester-button-delete{
+
+}
+
+.fa-plus-circle {
+    font-size: 40px;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.fa-minus-circle {
+    font-size: 40px;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.fa-ellipsis-h {
+    font-size: 18px;
+    float: right;
+}
+
+.fa-ellipsis-h:hover {
+    color: blue;
+}
+
+.fa-ellipsis-h:active {
+    color: orange;
+}
+
+.fa-times {
+    float: right;
+}
+
+.fa-times:hover {
+    color: red;
+}
+
+.fa-times:active {
+    color: white;
+}
+
+.sm-options > i:last-child {
+    position: relative;
+    bottom: 5px;
+    right: -20px;
+}
+
+.sm-options > i:first-child {
+    position: relative;
+    bottom: -12px;
+}
+
+.fa-bars {
+    font-size: 55px;
+}
+
+.fa-book {
+    font-size: 50px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 10px;
+    transform: rotate(1.5deg);
+}
+
+
+.dragged {
+    opacity: 50%;
+    border: 5px dotted black;
+}
+
+.info {
+    margin-left: 15px;
+}
+
+
+.under {
+    position: relative;
+    top: -25px;
+}
+
+#logged_in {
+
+}
+
+progress {
+    /*-webkit-appearance: none;*/
+    /*margin-left: 400px;*/
+    float: right;
+    margin-right: 200px;
+    height: 25px;
+    width: 600px;
+    color: black;
+}
+/*
+progress {
+    background: white;
+}*/
+/*
+progress[value] {color:black}
+progress::-webkit-progress-bar-value {background:black}
+progress::-webkit-progress-value {background:black}
+progress::-moz-progress-bar {background:black}*/

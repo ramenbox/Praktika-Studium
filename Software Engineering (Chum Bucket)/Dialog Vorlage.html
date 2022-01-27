@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+
+
+<link rel="stylesheet" href="css/dialog-style.css">
+
+<dialog open>
+    <form method="post" action=""> <!-- action = die Datei zu der gesendet werden soll -->
+        <div class="container">
+            <div class="topbar">Überschrift</div> <!-- Der Graue Balken oben mit Überschrift -->
+        </div>
+
+        <input type="submit" value="X" class="X"> <!-- Der X button oben Rechts -->
+
+        <div class="dialogtext">
+            Hier kommt Text <br> <!-- Text -->
+        </div>
+
+
+        <button type="reset" class="normalbutton" onclick="location.href='Dialog%20Vorlage.html'"> <!-- sendet via GET daten die an die URL via ?daten=1 angehängt werden -->
+            Senden via Get
+        </button>
+
+        <input type="submit" value="Senden via Post" class="greenbutton" name="delete"> <!-- sendet via POST die daten von name=""-->
+    </form>
+</dialog>
+</html>

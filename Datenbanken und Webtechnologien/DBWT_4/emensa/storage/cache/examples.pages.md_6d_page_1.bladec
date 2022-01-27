@@ -1,0 +1,18 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title', 'm4_6d_layout'); ?>
+
+<?php $this->startSection('header'); ?>
+ <p>Header Seite 1</p>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('main'); ?>
+ <p>Main Seite 1</p>
+<?php $this->stopSection(); ?>
+
+<?php $this->startSection('foot'); ?>
+ <p>Footer Seite 1</p>
+<?php $this->stopSection(); ?>
+
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('examples.layout.m4_6d_layout'); } ?>

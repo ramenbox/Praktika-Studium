@@ -1,0 +1,15 @@
+Wort muss in Sigma Stern sein und 
+dann vom Startzustand in N Zustand kommen
+
+deltastern = Startzustand, wort , endzustand
+
+Wenn man das leere Wort liest, bleibt man im Zustand
+
+Buchtsabe gefolgt von einem Wort, dann muss es einen Zwischenszustand geben
+
+Zwischenzustand von Z unter lesem des einen symbols a mit dem delta was im Programm drinsteht in den zwischenzustand
+und vom zwischenzustand kommt man mit den erweiterten transitionen in den mit dem lesen des W's in den Zustand der rechts steht
+
+a = zwischensymbol
+w = wort
+

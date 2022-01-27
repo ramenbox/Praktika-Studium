@@ -1,0 +1,121 @@
+footer li{
+    font-size: smaller;
+    margin:5px;
+    border-right: burlywood;
+}
+
+footer ul li{
+    display:inline;
+    padding: 0.5em 1em;
+    border-right: 2px solid #bbbbbb;
+    margin: 0;
+    line-height: 0.8em;
+}
+
+footer ul li:last-child{
+    border: none;
+}
+
+.photo li{
+    font-size: smaller;
+    margin:5px;
+    border-right: burlywood;
+}
+
+.photo ul li{
+    display:inline;
+    padding: 0.5em 1em;
+    border-right: 2px solid #bbbbbb;
+    margin: 0;
+    line-height: 0.8em;
+}
+
+.photo ul li:last-child{
+    border: none;
+}
+
+h2{
+    padding-top: 10px;
+    width: auto;
+}
+
+
+a:link {
+    color: turquoise;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: #bbbbbb;
+    text-decoration: none;
+}
+a:active {
+    color: darkcyan;
+    text-decoration: none;
+}
+
+fieldset{
+    border: solid 0.5px mediumturquoise;
+    width: 400px;
+}
+
+.restaurant{
+    margin: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #bbbbbb;
+}
+
+.divider{
+    max-width: 700px;
+    margin:0 auto;
+}
+
+table, td, th {
+    border: 1px solid black;
+    width: auto;
+    align-content: center;
+}
+th {
+    border-bottom: 1px solid black;
+}
+
+footer{
+    border-top: 1px solid #bbbbbb;
+    text-align: end;
+}
+
+.orderedliste{
+    list-style-type: circle;
+}
+
+.gridbutton{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: mediumturquoise;
+}
+
+.gridbutton2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 10px;
+}
+
+.gridbutton3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 10px;
+}
+
+.bild img { height: 100px; width: 100px}
+
+.bild {
+    display: flex; flex-direction: row; justify-content: space-around;
+}
+
+table img  {
+    height: 100px; width: 100px;
+}

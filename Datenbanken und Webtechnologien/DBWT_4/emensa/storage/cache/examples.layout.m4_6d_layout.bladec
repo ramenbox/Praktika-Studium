@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+ <title><?php echo $this->yieldContent('title'); ?></title>
+</head>
+<body>
+<head>
+ <?php $this->startSection('header'); ?>
+ <?php echo $this->yieldSection(); ?>
+</head>
+<?php $this->startSection('main'); ?>
+<?php echo $this->yieldSection(); ?>
+<footer>
+ <?php $this->startSection('foot'); ?>
+ <?php echo $this->yieldSection(); ?>
+</footer>
+</body>
+</html>

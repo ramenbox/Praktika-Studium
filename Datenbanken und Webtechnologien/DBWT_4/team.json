@@ -1,0 +1,16 @@
+{
+	"team" : "INF_E",
+	"mitglieder":
+	[
+	  {
+		"matrikelnummer": 3130383,
+		"name": "Thavarupan Mahendralingham", 
+		"ilias" : "tm4399s"
+	  },
+	  {
+		"matrikelnummer": 3158169,
+		"name": "Harun Karacuban",
+		"ilias" : "hk3895s"
+	  }
+	]
+}

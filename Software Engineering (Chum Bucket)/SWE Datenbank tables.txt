@@ -1,0 +1,65 @@
+create table student (
+    id int primary key,
+    email varchar(80) not null unique,
+    password varchar(80) not null,
+    vorname varchar(80) not null,
+    nachname varchar(80) not null,
+    zweitname varchar(80),
+    matrikelnummer int not null unique,
+    semester int
+);
+
+create table verwalter(
+    id int primary key,
+    name varchar(80) not null,
+    email varchar(80) not null unique,
+    password varchar(80) not null
+);
+
+create table modul(
+    id int primary key,
+    modulname varchar(80) not null,
+    anzeigenameVeraenderbar boolean,
+    wintersemester boolean,
+    sommersemester boolean,
+    prüfung boolean,
+    praktikum boolean,
+    vorlesung boolean,
+    credits int
+);
+
+create table studienverlaufsplan(
+    student_id int references student(id),
+    fachsemester int,
+    gesamtfortschritt int,
+    studientgan varchar(80),
+    jahr int,
+    startsemester int,
+    credits int,
+    praxisprojekt boolean
+);
+
+create table semester(
+    semester varchar(10),
+    fortschritt int,
+    studenten_id int,
+    modul_id int,
+    modul_note int,
+    modul_titel varchar(80),
+    modul_notiz mediumtext,
+    semester_typ varchar(80),
+    praktikum_bestanden boolean
+);
+
+create table studiengang(
+  modul_id int references modul(id),
+  studiengang varchar(10)
+);
+
+create table semestertyp(
+    vorlesungs_semester boolean,
+    praxis_semester boolean,
+    auslands_semester boolean,
+    urlaubs_semester boolean,
+    krankheits_semester boolean
+);

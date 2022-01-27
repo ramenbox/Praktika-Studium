@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+ <title><?php echo $this->yieldContent('title'); ?></title> <!-- E-Mensa -->
+ <!-- Layout -->
+
+ <?php $this->startSection('header'); ?>
+ <?php echo $this->yieldSection(); ?>
+</head>
+<body>
+
+ <?php $this->startSection('nav'); ?>
+ <?php echo $this->yieldSection(); ?>
+
+ <div class="divider">
+ <?php $this->startSection('text'); ?>
+ <?php echo $this->yieldSection(); ?>
+
+ <?php $this->startSection('gerichte'); ?>
+ <?php echo $this->yieldSection(); ?>
+
+ </div>
+
+<footer>
+ <?php $this->startSection('footer'); ?>
+ <?php echo $this->yieldSection(); ?>
+</footer>
+
+</body>
+</html>

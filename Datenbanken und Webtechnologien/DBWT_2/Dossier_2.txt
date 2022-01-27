@@ -1,0 +1,9 @@
+- Harun, Karacuban, 3158169
+- Thavarupan, Mahendralingham, 3130383
+
+1. Aufgabe = 10 Minuten
+2. Aufgabe = 30 Minuten
+3. Aufgabe = 3 Stunden
+4. Aufgabe = 1 Minute
+5. Aufgabe = 1 Stunde 30 Minuten
+6. Aufgabe = 1 Stunde 38 Minuten

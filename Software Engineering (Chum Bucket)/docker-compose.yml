@@ -1,0 +1,36 @@
+version: '2'
+services:
+  webserver:
+    image: phpstorm/php-apache:7.4-xdebug2.9
+    ports:
+      - "127.0.0.1:80:80"
+      - "127.0.0.1:443:443"
+    links:
+      - db
+    volumes:
+      - ./src:/var/www/html
+      - ./config:/var/www/html/config
+      - ./:/app
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+    depends_on:
+      - db
+
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: database
+    ports:
+      - "127.0.0.1:8889:3306"
+
+  composer:
+    image: composer:latest
+    command: [ "composer", "install" ]
+    volumes:
+      - ./:/app
